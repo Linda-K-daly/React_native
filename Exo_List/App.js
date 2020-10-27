@@ -8,7 +8,7 @@ class App extends React.Component {
 
     this.renderItem = this.renderItem.bind(this);
 
-    this.state={
+    this.state = {
       countries: [],
     }
   }
@@ -28,26 +28,27 @@ class App extends React.Component {
       const url = 'http://restcountries.eu/rest/v2/all'
       return fetch(url).then(res => res.json())
     });
+      const countriesParse = JSON.parse(listCountries)
+      console.log (countriesParse)
 
-    Promise.all(listCountries)
-            .then(res => {
-                console.log ('[countries results]' , res);
-                const newCountries = res.map ( elem => {
-                    return {
-                        title: elem.name,
-                        description: elem.capital,
-                        // imgUrl: `https://image.tmdb.org/t/p/w300/${elem.poster_path}`
-                    }
-                })
-                console.log ('[newlist of countries] results', newCountries)
-                this.setState({
-                  countries: newCountries
-                })
-              })
-              .catch(err => console.log(err))
-        }
+    Promise.all()
+      .then(res => {
+        console.log('[countries results]', res);
+          return {
+            title: elem.name,
+            description: elem.capital,
+            imgUrl: `https://image.tmdb.org/t/p/w300/${elem.poster_path}`
+          }
+        })
+        console.log('[newlist of countries] results', listCountries)
+        this.setState({
+          countries: listCountries
+        })
+    
+      // .catch(err => console.log(err))
+  }
 
-
+ 
 
   render() {
     return (
@@ -55,7 +56,7 @@ class App extends React.Component {
         // data={[{key: 'a', key: 'b'}]}
         renderItem={this.renderItem}
         keyExtractor={(item, index) => index.toString()}
-        />
+      />
     );
   }
 }
