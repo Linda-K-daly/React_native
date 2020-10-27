@@ -1,0 +1,12 @@
+{
+  "name": "Exercice_native_1",
+  "displayName": "Exercice_native_1",
+  "expo": {
+    "name": "Exercice_native_1",
+    "slug": "Exercice_native_1",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

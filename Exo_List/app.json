@@ -1,0 +1,12 @@
+{
+  "name": "Exo_List",
+  "displayName": "Exo_List",
+  "expo": {
+    "name": "Exo_List",
+    "slug": "Exo_List",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
